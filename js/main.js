@@ -13,6 +13,20 @@ const sizeObserver = new ResizeObserver(setHeaderHeight);
 sizeObserver.observe(header);
 if (message) sizeObserver.observe(message);
 
+// ===== トップのメイン写真：3秒ごとのスライドショー =====
+// 表示中の写真から is-active を外して、次の写真に付けかえる（最後まで行ったら最初に戻る）
+const heroImages = document.querySelectorAll('.hero img');
+// 「動きを減らす」設定にしている人には、自動で切り替えない
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (heroImages.length > 1 && !reduceMotion) {
+  let current = 0;
+  setInterval(() => {
+    heroImages[current].classList.remove('is-active');
+    current = (current + 1) % heroImages.length;
+    heroImages[current].classList.add('is-active');
+  }, 3000); // 3000ミリ秒 = 3秒
+}
+
 // ===== スマホメニューの開閉 =====
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
