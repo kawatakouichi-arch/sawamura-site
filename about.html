@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 作りかけの間は検索に載せない（公開するときにこの行を消す） -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>About | sawamura yasuko hair&amp;make.</title>
+  <meta name="description" content="ヘアメイク 澤村康子のプロフィール。京都のプライベートサロンを拠点に、出張ウェディングヘアメイクとして活動しています。">
+
+  <!-- フォント（index.html と同じ） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Shippori+Mincho&family=Zen+Old+Mincho&family=Klee+One&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（index.html と共通） ===== -->
+  <header class="header">
+    <p class="header__title">
+      <a href="index.html">
+        <span class="header__name">sawamura yasuko</span>
+      </a>
+    </p>
+
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="global-nav">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wedding.html">Wedding</a></li>
+        <li><a href="eyelash.html">Eyelash &amp; Eyebrow</a></li>
+        <li><a href="lesson.html">Make Lesson</a></li>
+        <li><a href="shooting.html">Shooting</a></li>
+        <li><a href="price.html">price</a></li>
+        <li><a href="about.html" class="is-current">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. ページ名 ===== -->
+    <section class="page-title">
+      <h1 class="page-title__en">About</h1>
+      <p class="page-title__ja">プロフィール</p>
+    </section>
+
+    <!-- ===== 2. メイン写真（モノクロ） ===== -->
+    <section class="wedding-main">
+      <img src="img/about/about-main.jpg" alt="ヘアメイク 澤村康子">
+    </section>
+
+    <!-- ===== 3. 名前＋プロフィール文 ===== -->
+    <section class="wedding-intro profile">
+      <h2 class="profile__name">澤村 康子</h2>
+      <p class="profile__en">sawamura yasuko</p>
+      <p class="profile__text">
+        ヘアメイク事務所、ブライダルヘアメイクの会社を経て、フリーランスのヘアメイクとして独立。現在は京都のプライベートサロンでアイラッシュや眉毛スタイリング、パーソナルメイクレッスンを行いながら、ご依頼があればどこへでも出張するウェディングヘアメイクとして活動しています。
+      </p>
+    </section>
+
+    <!-- ===== 4. Career（経歴） ===== -->
+    <section class="flow flow--open">
+      <h2 class="heading"><span>Career</span></h2>
+      <p class="flow__sub">経歴</p>
+
+      <dl class="flow__list career-list">
+        <div class="career-list__row">
+          <dt>大阪モード学園</dt>
+          <dd>卒業</dd>
+        </div>
+        <div class="career-list__row">
+          <dt>ヘアメイク事務所</dt>
+          <dd>CMや広告撮影のヘアメイク、テレビ局での衣装スタイリスト</dd>
+        </div>
+        <div class="career-list__row">
+          <dt>ブライダル会社</dt>
+          <dd>ブライダルヘアメイクの会社に10年勤務。多数のブライダルショーを経験し、たくさんの花嫁さまのお支度に携わる</dd>
+        </div>
+        <div class="career-list__row">
+          <dt>独立</dt>
+          <dd>フリーランスのヘアメイクとして独立</dd>
+        </div>
+        <div class="career-list__row">
+          <dt>現在</dt>
+          <dd>京都のプライベートサロンでアイラッシュ・眉毛スタイリング・パーソナルメイクレッスン。出張ウェディングヘアメイク</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== 5. License（資格）：Make Lesson の Recommend と同じ並び ===== -->
+    <section class="license">
+      <h2 class="heading"><span>License</span></h2>
+      <p class="flow__sub">資格</p>
+
+      <ul class="flow__list">
+        <li class="recommend-list__item">美容師免許</li>
+        <li class="recommend-list__item">管理美容師免許</li>
+        <li class="recommend-list__item">アイラッシュエクステンション協会 技術検定一級</li>
+        <li class="recommend-list__item">parisienne lash lift ディプロマ</li>
+        <li class="recommend-list__item">HOLLYWOOD BROW LIFT ディプロマ</li>
+      </ul>
+    </section>
+
+    <!-- ===== 6. Contact ボタン ===== -->
+    <section class="wedding-contact">
+      <a href="contact.html" class="btn">Contact</a>
+    </section>
+  </main>
+
+  <!-- ===== フッター（index.html と共通） ===== -->
+  <footer class="footer">
+    <a href="#" class="pagetop">Page Top</a>
+
+    <a href="https://www.instagram.com/" class="footer__sns" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.3" cy="6.7" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <p class="footer__copy">Copyright &copy; <span id="year">2026</span> sawamura yasuko</p>
+  </footer>
+
+  <!-- 拡大表示（ギャラリー用・index.html と共通） -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="閉じる">&times;</button>
+    <div class="lightbox__inner ph" data-label=""></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

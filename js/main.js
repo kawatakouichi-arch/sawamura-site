@@ -69,7 +69,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ===== スクロールでふわっと表示 =====
-const fadeTargets = document.querySelectorAll('.message__text, .heading, .gallery__list li, .wedding-intro__text, .flow__item, .menu-list__item, .notice__box, .recommend-list__item, .before-after__figure, .price-col');
+const fadeTargets = document.querySelectorAll('.message__text, .heading, .gallery__list li, .wedding-intro__text, .flow__item, .menu-list__item, .notice__box, .recommend-list__item, .before-after__figure, .price-col, .career-list__row');
 fadeTargets.forEach((el) => el.classList.add('fade'));
 
 const observer = new IntersectionObserver((entries) => {

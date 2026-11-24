@@ -34,7 +34,10 @@ h2,
 h3,
 p,
 ul,
-figure {
+figure,
+dl,
+dd,
+fieldset {
   margin: 0;
   padding: 0;
 }
@@ -1041,6 +1044,7 @@ body {
   margin-bottom: 8px;
   font-size: 12px;
   letter-spacing: .1em;
+  color: var(--color-light);
 }
 
 .price-col__includes {
@@ -1058,8 +1062,11 @@ body {
   padding: 40px 20px;
   background: #fafafa;
   text-align: center;
+  font-family: "Shippori Mincho", serif;
+  /* 中央そろえの文は、紹介文と同じしっぽり明朝 */
   font-size: 13px;
-  line-height: 2;
+  letter-spacing: .08em;
+  line-height: 2.2;
 }
 
 /* ---- ほかのページの料金へのリンク ---- */
@@ -1114,5 +1121,289 @@ body {
 
   .price-links {
     padding-top: 48px;
+  }
+}
+
+/* =========================================
+   About ページ（about.html）
+   ※ページ名・メイン写真・Career の枠・License の並び・ボタンは
+     ほかのページと同じクラスを使い回しています
+   ========================================= */
+
+/* ---- 名前＋プロフィール文 ---- */
+.profile__name {
+  font-family: "Shippori Mincho", serif;
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: .3em;
+  line-height: 1.6;
+}
+
+.profile__en {
+  margin-top: 6px;
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: .15em;
+  color: var(--color-light);
+}
+
+.profile__text {
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: left;
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+/* ---- Career：左に項目名（150px）、右に内容 ---- */
+.career-list__row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.career-list__row:first-child {
+  border-top: none;
+}
+
+.career-list__row dt {
+  font-family: "Shippori Mincho", serif;
+  letter-spacing: .05em;
+  color: var(--color-light);
+}
+
+.career-list__row dd {
+  font-size: 14px;
+}
+
+/* ---- License ---- */
+.license {
+  padding: 0 20px 100px;
+}
+
+/* ---- About ページ：スマホ（768px以下） ---- */
+@media (max-width: 768px) {
+  .profile__name {
+    font-size: 22px;
+  }
+
+  .profile__text {
+    margin-top: 32px;
+  }
+
+  /* 項目名の下に内容 */
+  .career-list__row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 18px 0;
+  }
+
+  .license {
+    padding: 0 20px 64px;
+  }
+}
+
+/* =========================================
+   Contact ページ（contact.html）
+   ========================================= */
+
+/* ---- ページ名の下のひとこと（紹介文の形を使い回し・余白だけ小さく） ---- */
+.contact-intro {
+  padding: 0 20px 60px;
+}
+
+/* ---- フォーム全体（PC 最大幅760px） ---- */
+.contact-form {
+  padding: 0 20px 100px;
+}
+
+.form {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* まとまりごとに上下の線 */
+.form__group {
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+/* 1行：左に項目名（200px）、右に入力欄 */
+.form__row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.form__row:first-child {
+  border-top: none;
+}
+
+.form__label {
+  font-size: 14px;
+}
+
+/* 「必須」の小さなグレーのラベル */
+.form__required {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 6px;
+  font-size: 10px;
+  line-height: 1.8;
+  vertical-align: 2px;
+  color: #fff;
+  background: var(--color-light);
+}
+
+/* 入力欄：枠線 #ddd、角丸なし */
+.form__input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.form__input::placeholder {
+  color: #bbb;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--color-light);
+}
+
+.form__textarea {
+  height: 180px;
+  padding: 12px;
+  resize: vertical;
+}
+
+/* メッセージは項目名を上にそろえる */
+.form__group--message {
+  margin-top: 40px;
+}
+
+.form__group--message .form__row {
+  align-items: start;
+}
+
+.form__group--message .form__label {
+  padding-top: 12px;
+}
+
+/* チェックボックス */
+.form__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font-size: 14px;
+}
+
+.form__checks label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.form__checks input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--color-text);
+}
+
+/* 小さな説明文 */
+.form__hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-light);
+}
+
+.form__group-note {
+  margin: 40px 0 12px;
+  font-size: 12px;
+  color: var(--color-light);
+}
+
+/* ---- 送信ボタン（塗りつぶし） ---- */
+.form__submit {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-submit {
+  min-width: 280px;
+  height: 56px;
+  padding: 0 40px;
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: .2em;
+  color: #fff;
+  background: var(--color-text);
+  transition: opacity .3s;
+}
+
+.btn-submit:hover {
+  opacity: .8;
+}
+
+/* ---- Contact ページ：スマホ（768px以下） ---- */
+@media (max-width: 768px) {
+  .contact-intro {
+    padding: 0 20px 40px;
+  }
+
+  .contact-form {
+    padding: 0 20px 64px;
+  }
+
+  /* 項目名の下に入力欄 */
+  .form__row {
+    grid-template-columns: 1fr;
+    padding: 18px 0;
+  }
+
+  /* iPhone で拡大されないように 16px */
+  .form__input {
+    height: 46px;
+    font-size: 16px;
+  }
+
+  .form__textarea {
+    height: 160px;
+  }
+
+  .form__group--message .form__label {
+    padding-top: 0;
+  }
+
+  /* チェックボックスは2列 */
+  .form__checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .form__submit {
+    margin-top: 40px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    min-width: 0;
   }
 }
