@@ -655,9 +655,13 @@ body {
   letter-spacing: .1em;
 }
 
+/* 説明文は明朝体（Eyelash のメニュー説明・Notice と同じ書き方） */
 .flow__text {
+  font-family: "Shippori Mincho", serif;
   font-size: 13px;
-  line-height: 1.9;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: #777;
 }
 
 /* ---- 6. Contact ボタン（細い枠線） ---- */
@@ -761,6 +765,7 @@ body {
 /* ---- 紹介文の下の資格（小さく） ---- */
 .intro-note {
   margin-top: 40px;
+  font-family: "Shippori Mincho", serif;
   font-size: 12px;
   letter-spacing: .05em;
   line-height: 2;
@@ -818,7 +823,22 @@ body {
   font-family: "Shippori Mincho", serif;
   font-size: 16px;
   font-weight: normal;
-  letter-spacing: .1em;
+  letter-spacing: .04em;   /* カタカナがバラバラに見えないよう、字間はせまめ */
+  color: #555;
+}
+
+/* 長いメニュー名を言葉の途中で折り返さない */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* メニューの説明文も明朝体にそろえる（Notice と同じ雰囲気） */
+.menu-list .flow__text {
+  font-family: "Shippori Mincho", serif;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: #777;
 }
 
 .menu-list__price {
@@ -855,8 +875,12 @@ body {
 }
 
 .notice__list {
+  font-family: "Shippori Mincho", serif;  /* サイトの雰囲気に合わせて明朝体に */
   font-size: 13px;
-  line-height: 1.9;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: #777;
+  word-break: auto-phrase;  /* 対応ブラウザでは、言葉の途中で改行しにくくする */
 }
 
 .notice__list li {
@@ -872,7 +896,9 @@ body {
 /* ---- Contact ボタンの下の Instagram ---- */
 .contact-note {
   margin-top: 20px;
+  font-family: "Shippori Mincho", serif;
   font-size: 12px;
+  letter-spacing: .04em;
   color: var(--color-light);
 }
 
@@ -987,6 +1013,7 @@ body {
 .before-after__caption {
   display: flex;
   margin-top: 12px;
+  font-family: "Shippori Mincho", serif;
   font-size: 12px;
   letter-spacing: .1em;
   color: var(--color-light);
@@ -1090,13 +1117,16 @@ body {
 .price-col__label {
   margin-top: 24px;
   margin-bottom: 8px;
+  font-family: "Shippori Mincho", serif;
   font-size: 12px;
   letter-spacing: .1em;
   color: var(--color-light);
 }
 
 .price-col__includes {
+  font-family: "Shippori Mincho", serif;
   font-size: 12px;
+  letter-spacing: .04em;
   line-height: 2;
   color: var(--color-light);
 }
@@ -1121,7 +1151,10 @@ body {
 .price-links {
   padding: 60px 20px 0;
   text-align: center;
+  font-family: "Shippori Mincho", serif;
+  /* 下の文字リンクは .text-link で Josefin Sans のまま */
   font-size: 12px;
+  letter-spacing: .04em;
   color: var(--color-light);
 }
 
@@ -1200,7 +1233,9 @@ body {
   max-width: 600px;
   margin: 40px auto 0;
   text-align: left;
+  font-family: "Shippori Mincho", serif;
   font-size: 14px;
+  letter-spacing: .04em;
   line-height: 2.2;
 }
 
@@ -1224,7 +1259,9 @@ body {
 }
 
 .career-list__row dd {
+  font-family: "Shippori Mincho", serif;
   font-size: 14px;
+  letter-spacing: .04em;
 }
 
 /* ---- License ---- */
