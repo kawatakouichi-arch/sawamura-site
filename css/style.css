@@ -844,10 +844,22 @@ body {
 .menu-list__price {
   flex-shrink: 0;
   /* 料金は折り返さない */
-  font-family: var(--font-en);
+  font-family: "Josefin Sans", "Shippori Mincho", serif;
+  /* 数字は Josefin Sans。Josefin Sans にない「〜」は、ゴシックではなくしっぽり明朝で表示 */
   font-weight: 300;
   font-size: 16px;
   letter-spacing: .05em;
+}
+
+/* 日本語の中の数字だけ Josefin Sans にそろえる（例：洋装 <span class="num">1</span>点） */
+.num {
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 1.1em;
+  /* 明朝の文字と高さがそろうよう、少しだけ大きく */
+  letter-spacing: .02em;
+  margin: 0 .15em;
+  /* 前後の漢字と詰まって見えないよう、少しすき間をあける */
 }
 
 /* ---- Notice（ご来店の前に） ---- */
