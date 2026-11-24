@@ -494,6 +494,8 @@ body {
 
   .message__text {
     line-height: 3.2;   /* スマホのキャッチコピーの行間 */
+    width: 100%;        /* 枠いっぱいの幅にして、1行が途中で折り返さないようにする */
+    word-break: keep-all; /* 万一入りきらなくても、言葉の途中では折り返さない */
   }
 
   /* スマホのメイン写真：写真そのままの比率（1166×656）で表示 */
@@ -1230,6 +1232,11 @@ body {
   padding: 0 20px 100px;
 }
 
+/* 見出しと「資格」の間は Career（.flow）と同じ間隔に */
+.license .heading {
+  margin-bottom: 14px;
+}
+
 /* ---- About ページ：スマホ（768px以下） ---- */
 @media (max-width: 768px) {
   .profile__name {
@@ -1339,6 +1346,8 @@ body {
 /* メッセージは項目名を上にそろえる */
 .form__group--message {
   margin-top: 40px;
+  border-top: none;
+  /* 上のまとまりの線と二重に見えないよう、上の線は消す */
 }
 
 .form__group--message .form__row {
