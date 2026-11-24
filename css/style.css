@@ -70,6 +70,8 @@ body {
   line-height: 1.8;
   color: var(--color-text);
   background: var(--color-bg);
+  text-wrap: pretty;
+  /* 文章の最後の行が1〜2文字だけにならないよう、ブラウザが折り返しを調整する（対応していないブラウザでは何も起きない） */
 }
 
 /* ---- 写真の仮置き（グレー） ---- */
@@ -935,8 +937,11 @@ body {
 .intro-desc {
   max-width: 560px;
   margin: 40px auto 0;
+  font-family: "Shippori Mincho", serif;
+  /* すぐ上の紹介文と同じしっぽり明朝 */
   font-size: 13px;
-  line-height: 2;
+  letter-spacing: .05em;
+  line-height: 2.2;
   color: #777;
 }
 
