@@ -1,0 +1,10 @@
+# GitHub にアップロードしないファイル
+# 元サイトから保存した写真（大きいので上げない）
+ownd-photos/
+# 作業メモ（デザイン案のリンクなどが入っている）
+CLAUDE.md
+# Claude Code の個人設定
+.claude/
+# Windows が勝手に作るファイル
+Thumbs.db
+desktop.ini

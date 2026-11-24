@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 作りかけの間は検索に載せない（公開するときにこの行を消す） -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Shooting | sawamura yasuko hair&amp;make.</title>
+  <meta name="description" content="撮影ヘアメイク。企業広告の撮影や作品撮りなど、撮影のヘアメイクも承っております。">
+
+  <!-- フォント（index.html と同じ） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Shippori+Mincho&family=Zen+Old+Mincho&family=Klee+One&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（index.html と共通） ===== -->
+  <header class="header">
+    <p class="header__title">
+      <a href="index.html">
+        <span class="header__name">sawamura yasuko</span>
+      </a>
+    </p>
+
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="global-nav">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wedding.html">Wedding</a></li>
+        <li><a href="eyelash.html">Eyelash &amp; Eyebrow</a></li>
+        <li><a href="lesson.html">Make Lesson</a></li>
+        <li><a href="shooting.html" class="is-current">Shooting</a></li>
+        <li><a href="price.html">price</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. ページ名 ===== -->
+    <section class="page-title">
+      <h1 class="page-title__en">Shooting</h1>
+      <p class="page-title__ja">撮影ヘアメイク</p>
+    </section>
+
+    <!-- ===== 2. メイン写真 ===== -->
+    <section class="wedding-main">
+      <img src="img/shooting/shooting-main.jpg" alt="撮影ヘアメイクの作品">
+    </section>
+
+    <!-- ===== 3. 紹介文 ===== -->
+    <section class="wedding-intro">
+      <p class="wedding-intro__text">
+        企業広告の撮影や作品撮りなど<br>
+        撮影のヘアメイクも承っております
+      </p>
+    </section>
+
+    <!-- ===== 4. Works（Wedding の Hair Style と同じ・クリックで拡大） ===== -->
+    <section class="gallery wedding-hair">
+      <h2 class="heading"><span>Works</span></h2>
+
+      <ul class="gallery__list">
+        <li><button><img src="img/shooting/works-01.jpg" alt="撮影作品 1" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-02.jpg" alt="撮影作品 2" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-03.jpg" alt="撮影作品 3" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-04.jpg" alt="撮影作品 4" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-05.jpg" alt="撮影作品 5" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-06.jpg" alt="撮影作品 6" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-07.jpg" alt="撮影作品 7" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-08.jpg" alt="撮影作品 8" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-09.jpg" alt="撮影作品 9" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-10.jpg" alt="撮影作品 10" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-11.jpg" alt="撮影作品 11" loading="lazy"></button></li>
+        <li><button><img src="img/shooting/works-12.jpg" alt="撮影作品 12" loading="lazy"></button></li>
+      </ul>
+    </section>
+
+    <!-- ===== 5. ご依頼の案内＋Contact ボタン（上に区切り線） ===== -->
+    <section class="wedding-contact wedding-contact--line">
+      <p class="contact-lead">撮影のご依頼・ご相談はこちらから</p>
+      <a href="contact.html" class="btn">Contact</a>
+    </section>
+  </main>
+
+  <!-- ===== フッター（index.html と共通） ===== -->
+  <footer class="footer">
+    <a href="#" class="pagetop">Page Top</a>
+
+    <a href="https://www.instagram.com/" class="footer__sns" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.3" cy="6.7" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <p class="footer__copy">Copyright &copy; <span id="year">2026</span> sawamura yasuko</p>
+  </footer>
+
+  <!-- 拡大表示（ギャラリー用・index.html と共通） -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="閉じる">&times;</button>
+    <div class="lightbox__inner ph" data-label=""></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

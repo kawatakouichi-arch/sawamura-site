@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 作りかけの間は検索に載せない（公開するときにこの行を消す） -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>price | sawamura yasuko hair&amp;make.</title>
+  <meta name="description" content="ブライダルヘアメイクの料金。結婚式・前撮りの基本料金です。">
+
+  <!-- フォント（index.html と同じ） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Shippori+Mincho&family=Zen+Old+Mincho&family=Klee+One&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（index.html と共通） ===== -->
+  <header class="header">
+    <p class="header__title">
+      <a href="index.html">
+        <span class="header__name">sawamura yasuko</span>
+      </a>
+    </p>
+
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="global-nav">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wedding.html">Wedding</a></li>
+        <li><a href="eyelash.html">Eyelash &amp; Eyebrow</a></li>
+        <li><a href="lesson.html">Make Lesson</a></li>
+        <li><a href="shooting.html">Shooting</a></li>
+        <li><a href="price.html" class="is-current">price</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. ページ名（メニュー表記は小文字の price のまま） ===== -->
+    <section class="page-title">
+      <h1 class="page-title__en">Price</h1>
+      <p class="page-title__ja">ブライダルヘアメイク料金</p>
+    </section>
+
+    <!-- ===== 2. メイン写真 ===== -->
+    <section class="wedding-main">
+      <img src="img/price/price-main.jpg" alt="ブライダルヘアメイクの様子">
+    </section>
+
+    <!-- ===== 3. 紹介文 ===== -->
+    <section class="wedding-intro">
+      <p class="wedding-intro__text">
+        基本の料金です<br>
+        お支度の追加などオプションもございますので<br>
+        まずはお気軽にお問い合わせください
+      </p>
+    </section>
+
+    <!-- ===== 4. 料金（PCは2列・スマホは縦に並べる） ===== -->
+    <section class="price-cols">
+      <!-- 左：Wedding（結婚式） -->
+      <div class="price-col">
+        <h2 class="sub-heading">Wedding</h2>
+        <p class="price-col__ja">結婚式</p>
+
+        <ul class="menu-list">
+          <li class="menu-list__item">
+            <div class="menu-list__head">
+              <h3 class="menu-list__name">洋装 1点</h3>
+              <span class="menu-list__price menu-list__price--lg">¥85,000〜</span>
+            </div>
+          </li>
+          <li class="menu-list__item">
+            <div class="menu-list__head">
+              <h3 class="menu-list__name">和装 1点</h3>
+              <span class="menu-list__price menu-list__price--lg">¥130,000〜</span>
+            </div>
+          </li>
+        </ul>
+
+        <p class="price-col__label">料金に含まれるもの</p>
+        <ul class="price-col__includes">
+          <li>当日のヘアメイク</li>
+          <li>新郎新婦さまのフィッティング</li>
+          <li>お引き上げまでのサポート（8時間まで）</li>
+          <li>ヘアメイクリハーサル</li>
+        </ul>
+      </div>
+
+      <!-- 右：Photo（前撮り） -->
+      <div class="price-col">
+        <h2 class="sub-heading">Photo</h2>
+        <p class="price-col__ja">前撮り</p>
+
+        <ul class="menu-list">
+          <li class="menu-list__item">
+            <div class="menu-list__head">
+              <h3 class="menu-list__name">洋装 1点</h3>
+              <span class="menu-list__price menu-list__price--lg">¥45,000〜</span>
+            </div>
+          </li>
+          <li class="menu-list__item">
+            <div class="menu-list__head">
+              <h3 class="menu-list__name">和装 1点</h3>
+              <span class="menu-list__price menu-list__price--lg">¥75,000〜</span>
+            </div>
+          </li>
+        </ul>
+
+        <p class="price-col__label">料金に含まれるもの</p>
+        <ul class="price-col__includes">
+          <li>当日のヘアメイク</li>
+          <li>新郎新婦さまのフィッティング</li>
+          <li>撮影同行</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 5. 税・交通費のお知らせ（うっすらグレーの帯） ===== -->
+    <section class="price-note">
+      <p>
+        表示はすべて税別です。<br>
+        別途、京都からの交通費<br class="sp-br">（宿泊が必要な場合は宿泊費）をいただきます。
+      </p>
+    </section>
+
+    <!-- ===== 6. ほかのページの料金へのリンク ===== -->
+    <section class="price-links">
+      <p>まつ毛・眉毛、メイクレッスンの料金は各ページへ</p>
+      <p class="price-links__list">
+        <a href="eyelash.html" class="text-link">Eyelash &amp; Eyebrow</a>
+        <a href="lesson.html" class="text-link">Make Lesson</a>
+      </p>
+    </section>
+
+    <!-- ===== 7. Contact ボタン ===== -->
+    <section class="wedding-contact">
+      <a href="contact.html" class="btn">Contact</a>
+    </section>
+  </main>
+
+  <!-- ===== フッター（index.html と共通） ===== -->
+  <footer class="footer">
+    <a href="#" class="pagetop">Page Top</a>
+
+    <a href="https://www.instagram.com/" class="footer__sns" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.3" cy="6.7" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <p class="footer__copy">Copyright &copy; <span id="year">2026</span> sawamura yasuko</p>
+  </footer>
+
+  <!-- 拡大表示（ギャラリー用・index.html と共通） -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="閉じる">&times;</button>
+    <div class="lightbox__inner ph" data-label=""></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

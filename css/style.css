@@ -1,0 +1,1118 @@
+/* =========================================
+   sawamura yasuko hair&make.  共通スタイル
+   ========================================= */
+
+/* ---- 色・フォントの設定（ここを変えると全体が変わります） ---- */
+:root {
+  --color-text: #666;
+  /* 本文の文字色 */
+  --color-light: #999;
+  /* メニューなど薄い文字 */
+  --color-line: #e5e5e5;
+  /* 区切り線 */
+  --color-ph: #d9d9d9;
+  /* 写真の仮グレー */
+  --color-bg: #fff;
+
+  --font-en: "Josefin Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-mincho: Palatino, "Hiragino Mincho ProN", "Yu Mincho", "游明朝", serif;
+  --font-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+  --content-width: 1000px;
+}
+
+/* ---- リセット ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* ---- 写真の仮置き（グレー） ---- */
+.ph {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: var(--color-ph);
+}
+
+.ph::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: .1em;
+  color: #fff;
+}
+
+.ph--hero {
+  aspect-ratio: 2000 / 975;
+}
+
+.ph--square {
+  aspect-ratio: 1 / 1;
+}
+
+/* =========================================
+   ヘッダー
+   ========================================= */
+.header {
+  padding-top: 60px;
+  /* サイト名の上の余白 */
+  text-align: center;
+  border-bottom: 1px solid transparent;
+}
+
+.header__title {
+  font-family: var(--font-en);
+  font-weight: 300;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  /* サイト名とメニューの間の余白 */
+}
+
+.header__title span {
+  display: block;
+}
+
+/* 2行に分ける */
+.header__name {
+  font-size: 20px;
+}
+
+/* sawamura yasuko */
+.header__sub {
+  font-size: 14px;
+}
+
+/* hair&make.（少し小さく） */
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.nav__list a {
+  display: block;
+  padding: 0 22px;
+  line-height: 70px;
+  font-family: var(--font-en);
+  font-size: 12px;
+  color: var(--color-light);
+  transition: color .3s;
+}
+
+.nav__list a:hover,
+.nav__list a.is-current {
+  color: var(--color-text);
+}
+
+/* ハンバーガー（スマホのみ表示） */
+.menu-btn {
+  display: none;
+}
+
+/* =========================================
+   メイン写真
+   ========================================= */
+.hero {
+  width: 100%;
+}
+
+/* ヘッダー＋メイン写真がちょうど1画面に収まる高さ
+   （--header-h は main.js がヘッダーの高さを測って入れます） */
+.hero .ph--hero {
+  aspect-ratio: auto;
+  height: calc(100svh - var(--header-h, 220px));
+  min-height: 320px;
+}
+
+/* 写真を入れたときも枠いっぱいにトリミングして表示 */
+.hero img {
+  width: 100%;
+  height: calc(100svh - var(--header-h, 220px));
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
+   キャッチコピー
+   ========================================= */
+.message {
+  padding: 110px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.message__text {
+  /* ▼キャッチコピーのフォント。使いたい行のコメントを外し、今の行をコメントにすると切り替わります */
+  font-family: "Shippori Mincho", serif;
+  /* しっぽり明朝：上品で柔らかい明朝 */
+  /* font-family: "Zen Old Mincho", serif; */
+  /* Zen Old Mincho：クラシックで格調のある明朝 */
+  /* font-family: "Klee One", cursive; */
+  /* クレー：手書き風でやさしい印象 */
+  /* font-family: "Zen Maru Gothic", sans-serif; */
+  /* Zen丸ゴシック：ふんわりした丸ゴシック */
+  font-size: 15px;
+  letter-spacing: .15em;
+  line-height: 4.2;
+  /* 元サイトのゆったりした行間 */
+}
+
+/* =========================================
+   見出し（元サイトの「新着記事」と同じ形）
+   ========================================= */
+.heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heading span {
+  display: inline-block;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-text);
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   ギャラリー
+   ========================================= */
+.gallery {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 80px 20px 120px;
+}
+
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery__list .ph {
+  transition: opacity .3s;
+}
+
+.gallery__list .ph:hover {
+  opacity: .75;
+}
+
+/* 表示時のふわっと */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s, transform .8s;
+}
+
+.fade.is-show {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================
+   拡大表示
+   ========================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, .95);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__inner {
+  width: min(80vw, 80vh);
+  aspect-ratio: 1 / 1;
+}
+
+/* 本物の写真を拡大するとき（グレーの箱をやめて、写真の比率のまま表示） */
+.lightbox__inner.has-img {
+  width: auto;
+  aspect-ratio: auto;
+  background: none;
+}
+
+.lightbox__inner.has-img::after {
+  content: none;
+}
+
+.lightbox__inner img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* =========================================
+   フッター
+   ========================================= */
+.footer {
+  padding: 0 10px 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.pagetop {
+  display: block;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-line);
+  font-family: var(--font-en);
+  letter-spacing: .05em;
+}
+
+.footer__sns {
+  display: inline-block;
+  margin: 20px 0 16px;
+  color: var(--color-text);
+  transition: opacity .3s;
+}
+
+.footer__sns:hover {
+  opacity: .6;
+}
+
+.footer__copy {
+  font-family: var(--font-en);
+}
+
+/* =========================================
+   スマホ（768px以下）
+   ========================================= */
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    padding: 28px 60px 28px 20px;
+    text-align: left;
+  }
+
+  .header__title {
+    margin-bottom: 0;
+  }
+
+  .header__name {
+    font-size: 16px;
+  }
+
+  .header__sub {
+    font-size: 12px;
+  }
+
+  .menu-btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 32px;
+    height: 24px;
+    transform: translateY(-50%);
+    z-index: 60;
+  }
+
+  .menu-btn span {
+    position: absolute;
+    left: 4px;
+    width: 24px;
+    height: 1px;
+    background: var(--color-text);
+    transition: transform .3s, opacity .3s;
+  }
+
+  .menu-btn span:nth-child(1) {
+    top: 4px;
+  }
+
+  .menu-btn span:nth-child(2) {
+    top: 12px;
+  }
+
+  .menu-btn span:nth-child(3) {
+    top: 20px;
+  }
+
+  .menu-btn.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-btn.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .97);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav__list a {
+    line-height: 3.2;
+    font-size: 14px;
+  }
+
+
+  /* スマホ：ヘッダー＋写真＋キャッチコピーを1画面に収める */
+  /* キャッチコピーの枠を「画面の残り全部」に広げて、
+     ヘッダー＋写真＋キャッチコピーでちょうど画面1枚にする */
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;   /* 最低限の上下余白（画面が小さいとき用） */
+    min-height: calc(100svh - var(--header-h, 80px) - 100vw * 656 / 1166);
+  }
+
+  .message__text {
+    line-height: 3.2;   /* スマホのキャッチコピーの行間 */
+  }
+
+  /* スマホのメイン写真：写真そのままの比率（1166×656）で表示 */
+  .hero .ph--hero,
+  .hero img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1166 / 656;
+  }
+
+  .gallery {
+    padding: 60px 12px 80px;
+  }
+
+  .gallery__list {
+    gap: 8px;
+  }
+
+  /* スマホも3列のまま（9枚がきれいに収まる） */
+}
+
+/* =========================================
+   Wedding ページ（wedding.html）
+   ========================================= */
+
+/* ---- 1. ページ名 ---- */
+.page-title {
+  padding: 70px 20px 50px;
+  text-align: center;
+}
+
+.page-title__en {
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: .2em;
+  line-height: 1.4;
+}
+
+.page-title__ja {
+  margin-top: 10px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 12px;
+  letter-spacing: .15em;
+  color: var(--color-light);
+}
+
+/* ---- 2. メイン写真（PCは16:9） ---- */
+.wedding-main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.wedding-main img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* ---- 3. 紹介文 ---- */
+.wedding-intro {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.wedding-intro__text {
+  font-family: "Shippori Mincho", serif;
+  font-size: 15px;
+  letter-spacing: .12em;
+  line-height: 2.8;
+}
+
+/* スマホだけで改行する <br> */
+.sp-br {
+  display: none;
+}
+
+/* ---- 4. Hair Style（3列×4段・縦長4:5） ---- */
+.wedding-hair {
+  padding-top: 0;
+}
+
+.wedding-hair .gallery__list button {
+  display: block;
+  width: 100%;
+}
+
+.wedding-hair .gallery__list img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: opacity .3s;
+}
+
+.wedding-hair .gallery__list button:hover img {
+  opacity: .75;
+}
+
+/* ---- 5. Flow（当日までの流れ） ---- */
+.flow {
+  padding: 100px 20px;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.flow .heading {
+  margin-bottom: 14px;
+}
+
+.flow__sub {
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: 12px;
+  letter-spacing: .15em;
+  color: var(--color-light);
+}
+
+.flow__list {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.flow__item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  /* 左：番号／右：タイトルと説明 */
+  gap: 0 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-line);
+  /* ステップの間の細い線 */
+}
+
+.flow__item:first-child {
+  border-top: none;
+}
+
+.flow__num {
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: .1em;
+  line-height: 1.5;
+  color: var(--color-light);
+}
+
+.flow__title {
+  margin-bottom: 6px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: .1em;
+}
+
+.flow__text {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* ---- 6. Contact ボタン（細い枠線） ---- */
+.wedding-contact {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 240px;
+  padding: 16px 40px;
+  border: 1px solid var(--color-text);
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: .2em;
+  transition: opacity .3s;
+}
+
+.btn:hover {
+  opacity: .6;
+}
+
+/* ---- Wedding ページ：スマホ（768px以下） ---- */
+@media (max-width: 768px) {
+  .page-title {
+    padding: 40px 20px 32px;
+  }
+
+  .page-title__en {
+    font-size: 30px;
+  }
+
+  /* メイン写真：画面幅いっぱい・3:2 */
+  .wedding-main {
+    padding: 0;
+  }
+
+  .wedding-main img {
+    aspect-ratio: 3 / 2;
+  }
+
+  .wedding-intro {
+    padding: 64px 20px;
+  }
+
+  .wedding-intro__text {
+    font-size: 14px;
+    letter-spacing: .08em;
+    line-height: 2.6;
+  }
+
+  .sp-br {
+    display: inline;
+  }
+
+  .wedding-hair .gallery__list {
+    gap: 4px;
+  }
+
+  .flow {
+    padding: 64px 20px;
+  }
+
+  .flow__sub {
+    margin-bottom: 40px;
+  }
+
+  .flow__item {
+    grid-template-columns: 40px 1fr;
+    gap: 0 12px;
+    padding: 22px 0;
+  }
+
+  .flow__num {
+    font-size: 16px;
+  }
+
+  .flow__title {
+    font-size: 15px;
+  }
+
+  .wedding-contact {
+    padding: 64px 20px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* =========================================
+   Eyelash & Eyebrow ページ（eyelash.html）
+   ※ページ名・メイン写真・紹介文・ギャラリー・Menu の枠・ボタンは
+     Wedding ページと同じクラスを使い回しています
+   ========================================= */
+
+/* ---- 紹介文の下の資格（小さく） ---- */
+.intro-note {
+  margin-top: 40px;
+  font-size: 12px;
+  letter-spacing: .05em;
+  line-height: 2;
+  color: var(--color-light);
+}
+
+/* ---- 小見出し（Eyelash / Eyebrow） ---- */
+.sub-heading {
+  margin-bottom: 24px;
+  text-align: center;
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: .15em;
+  color: #777;
+}
+
+/* ギャラリー・メニューで、2つ目の小見出しの上をあける */
+.gallery__list + .sub-heading,
+.menu-list + .sub-heading {
+  margin-top: 60px;
+}
+
+/* ---- Gallery：Eyelash は横長 3:2 ---- */
+.wedding-hair .gallery__list--wide img {
+  aspect-ratio: 3 / 2;
+}
+
+/* ---- Menu：名前 … 料金 の1行＋説明 ---- */
+.menu-list {
+  padding: 0;
+  list-style: none;
+}
+
+.menu-list__item {
+  padding: 24px 0;
+  border-top: 1px solid var(--color-line);
+  /* メニューの間の細い線 */
+}
+
+.menu-list__item:first-child {
+  border-top: none;
+}
+
+.menu-list__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.menu-list__name {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: .1em;
+}
+
+.menu-list__price {
+  flex-shrink: 0;
+  /* 料金は折り返さない */
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: .05em;
+}
+
+/* ---- Notice（ご来店の前に） ---- */
+.notice {
+  padding: 100px 20px 0;
+}
+
+.notice__box {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  background: #fafafa;
+}
+
+.heading--small {
+  margin-bottom: 14px;
+}
+
+.heading--small span {
+  font-size: 20px;
+}
+
+.notice .flow__sub {
+  margin-bottom: 32px;
+}
+
+.notice__list {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.notice__list li {
+  padding-left: 1em;
+  text-indent: -1em;
+  /* 「・」の2行目以降を字下げ */
+}
+
+.notice__list li + li {
+  margin-top: 8px;
+}
+
+/* ---- Contact ボタンの下の Instagram ---- */
+.contact-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--color-light);
+}
+
+.contact-note a {
+  color: var(--color-text);
+  transition: opacity .3s;
+}
+
+.contact-note a:hover {
+  opacity: .6;
+}
+
+/* ---- Eyelash & Eyebrow ページ：スマホ（768px以下） ---- */
+@media (max-width: 768px) {
+
+  /* 長いページ名を1行に収める */
+  .page-title__en--long {
+    font-size: 26px;
+    letter-spacing: .08em;
+  }
+
+  .intro-note {
+    margin-top: 32px;
+    font-size: 11px;
+  }
+
+  .sub-heading {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .gallery__list + .sub-heading,
+  .menu-list + .sub-heading {
+    margin-top: 40px;
+  }
+
+  .menu-list__item {
+    padding: 20px 0;
+  }
+
+  .menu-list__name {
+    font-size: 15px;
+  }
+
+  .menu-list__price {
+    font-size: 15px;
+  }
+
+  .notice {
+    padding: 64px 20px 0;
+  }
+
+  .notice__box {
+    padding: 36px 20px;
+  }
+}
+
+/* =========================================
+   Make Lesson ページ（lesson.html）
+   ※Wedding・Eyelash ページと同じクラスを使い回しています
+   ========================================= */
+
+/* ---- 紹介文の下の説明（13px・#777） ---- */
+.intro-desc {
+  max-width: 560px;
+  margin: 40px auto 0;
+  font-size: 13px;
+  line-height: 2;
+  color: #777;
+}
+
+/* ---- Flow の枠で「上の線だけ」にする ---- */
+.flow--open {
+  border-bottom: none;
+}
+
+/* ---- Recommend：番号なしで細い線で区切る ---- */
+.recommend-list__item {
+  padding: 22px 0;
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: 15px;
+  letter-spacing: .1em;
+}
+
+.recommend-list__item:first-child {
+  border-top: none;
+}
+
+/* ---- Before / After ---- */
+.before-after {
+  padding: 0 20px 100px;
+}
+
+.before-after__figure {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.before-after__figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* 写真の下に左右に分けて小さく */
+.before-after__caption {
+  display: flex;
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: .1em;
+  color: var(--color-light);
+}
+
+.before-after__caption span {
+  flex: 1;
+  text-align: center;
+}
+
+/* ---- Menu の下の注意書き（・の字下げは Notice と同じ） ---- */
+.menu-notes {
+  margin-top: 32px;
+  color: #777;
+}
+
+/* ---- Make Lesson ページ：スマホ（768px以下） ---- */
+@media (max-width: 768px) {
+  .intro-desc {
+    margin-top: 32px;
+    text-align: left;
+  }
+
+  .recommend-list__item {
+    padding: 18px 0;
+    font-size: 14px;
+    letter-spacing: .05em;
+  }
+
+  .before-after {
+    padding: 0 20px 64px;
+  }
+
+  .menu-notes {
+    margin-top: 24px;
+  }
+}
+
+/* =========================================
+   Shooting ページ（shooting.html）
+   ※Works は Wedding の Hair Style と同じクラスです
+   ========================================= */
+
+/* ---- Contact の上に区切り線 ---- */
+.wedding-contact--line {
+  border-top: 1px solid var(--color-line);
+}
+
+.contact-lead {
+  margin-bottom: 32px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 15px;
+  letter-spacing: .1em;
+  color: #777;
+}
+
+/* =========================================
+   price ページ（price.html）
+   ※料金の行は Eyelash のメニューと同じクラスです
+   ========================================= */
+
+/* ---- 料金：PCは2列 ---- */
+.price-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: calc(880px + 40px);
+  /* 880px＋左右の余白 */
+  margin: 0 auto;
+  padding: 0 20px 100px;
+}
+
+.price-col .sub-heading {
+  margin-bottom: 4px;
+}
+
+.price-col__ja {
+  margin-bottom: 24px;
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: 12px;
+  letter-spacing: .15em;
+  color: var(--color-light);
+}
+
+.price-col .menu-list {
+  border-bottom: 1px solid var(--color-line);
+}
+
+/* 料金は少し大きく（18px） */
+.menu-list__price--lg {
+  font-size: 18px;
+}
+
+/* 料金に含まれるもの（小さく） */
+.price-col__label {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+.price-col__includes {
+  font-size: 12px;
+  line-height: 2;
+  color: var(--color-light);
+}
+
+.price-col__includes li::before {
+  content: "・";
+}
+
+/* ---- 税・交通費のお知らせ（うっすらグレーの帯） ---- */
+.price-note {
+  padding: 40px 20px;
+  background: #fafafa;
+  text-align: center;
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* ---- ほかのページの料金へのリンク ---- */
+.price-links {
+  padding: 60px 20px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-light);
+}
+
+.price-links__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin-top: 12px;
+}
+
+/* 文字リンク（Josefin Sans・下線） */
+.text-link {
+  font-family: var(--font-en);
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity .3s;
+}
+
+.text-link:hover {
+  opacity: .6;
+}
+
+/* ---- price ページ：スマホ（768px以下） ---- */
+@media (max-width: 768px) {
+
+  /* 料金を縦に並べる */
+  .price-cols {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 20px 64px;
+  }
+
+  .menu-list__price--lg {
+    font-size: 16px;
+  }
+
+  .price-note {
+    padding: 32px 20px;
+    font-size: 12px;
+  }
+
+  .price-links {
+    padding-top: 48px;
+  }
+}

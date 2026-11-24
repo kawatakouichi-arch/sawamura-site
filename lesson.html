@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 作りかけの間は検索に載せない（公開するときにこの行を消す） -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Make Lesson | sawamura yasuko hair&amp;make.</title>
+  <meta name="description" content="メイクレッスン。オンライン・サロンにて。自己流になりがちなメイクを、一緒に見直しましょう。">
+
+  <!-- フォント（index.html と同じ） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Shippori+Mincho&family=Zen+Old+Mincho&family=Klee+One&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（index.html と共通） ===== -->
+  <header class="header">
+    <p class="header__title">
+      <a href="index.html">
+        <span class="header__name">sawamura yasuko</span>
+      </a>
+    </p>
+
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="global-nav">
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wedding.html">Wedding</a></li>
+        <li><a href="eyelash.html">Eyelash &amp; Eyebrow</a></li>
+        <li><a href="lesson.html" class="is-current">Make Lesson</a></li>
+        <li><a href="shooting.html">Shooting</a></li>
+        <li><a href="price.html">price</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. ページ名 ===== -->
+    <section class="page-title">
+      <h1 class="page-title__en">Make Lesson</h1>
+      <p class="page-title__ja">メイクレッスン</p>
+    </section>
+
+    <!-- ===== 2. メイン写真（あとで差し替え予定） ===== -->
+    <section class="wedding-main">
+      <img src="img/lesson/lesson-main.jpg" alt="メイクレッスンの様子">
+    </section>
+
+    <!-- ===== 3. 紹介文＋説明 ===== -->
+    <section class="wedding-intro">
+      <p class="wedding-intro__text">
+        私がご機嫌になれる<br>
+        最高のmakeupを<br>
+        一緒に探しましょう
+      </p>
+      <p class="intro-desc">
+        人に教わることが少なく、自己流になりがちなメイク。<br>
+        花嫁さまのメイクをしていると、そんなお声をよく耳にします。<br>
+        メイクの力で、少しでも自分のことを好きになるお手伝いができたらうれしいです。
+      </p>
+    </section>
+
+    <!-- ===== 4. Recommend（こんな方におすすめ） ===== -->
+    <section class="flow flow--open">
+      <h2 class="heading"><span>Recommend</span></h2>
+      <p class="flow__sub">こんな方におすすめ</p>
+
+      <ul class="flow__list">
+        <li class="recommend-list__item">化粧品の種類が多すぎて、何を買えばいいかわからない</li>
+        <li class="recommend-list__item">同じ化粧品をずっと使い続けている</li>
+        <li class="recommend-list__item">メイク自体、何からすればいいかわからない</li>
+        <li class="recommend-list__item">普段のメイクを変えたい</li>
+        <li class="recommend-list__item">自分に自信を持ちたい</li>
+      </ul>
+    </section>
+
+    <!-- ===== 5. Before / After ===== -->
+    <section class="before-after">
+      <h2 class="heading"><span>Before / After</span></h2>
+
+      <figure class="before-after__figure">
+        <img src="img/lesson/lesson-before-after.jpg" alt="普段のメイクとレッスン後のメイクの比較" loading="lazy">
+        <figcaption class="before-after__caption">
+          <span>普段のメイク</span>
+          <span>レッスン後</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== 6. Menu（Eyelash ページと同じ形） ===== -->
+    <section class="flow flow--open">
+      <h2 class="heading"><span>Menu</span></h2>
+      <p class="flow__sub">メニュー（税別）</p>
+
+      <div class="flow__list">
+        <ul class="menu-list">
+          <li class="menu-list__item">
+            <div class="menu-list__head">
+              <h3 class="menu-list__name">オンライン</h3>
+              <span class="menu-list__price">¥7,000</span>
+            </div>
+          </li>
+          <li class="menu-list__item">
+            <div class="menu-list__head">
+              <h3 class="menu-list__name">サロンにて</h3>
+              <span class="menu-list__price">¥15,000</span>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="notice__list menu-notes">
+          <li>・所要時間は約1時間半です（別料金で延長も可能）。料金は事前のお振込みとなります。</li>
+          <li>・事前に、普段のメイクのお写真やお悩み、知りたいことをお送りいただきます。</li>
+          <li>・お友達と一緒の受講もOKです。</li>
+          <li>・一般の方向けのメニューです（プロ向けではありません）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 7. Contact ボタン ===== -->
+    <section class="wedding-contact">
+      <a href="contact.html" class="btn">Contact</a>
+    </section>
+  </main>
+
+  <!-- ===== フッター（index.html と共通） ===== -->
+  <footer class="footer">
+    <a href="#" class="pagetop">Page Top</a>
+
+    <a href="https://www.instagram.com/" class="footer__sns" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.3" cy="6.7" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <p class="footer__copy">Copyright &copy; <span id="year">2026</span> sawamura yasuko</p>
+  </footer>
+
+  <!-- 拡大表示（ギャラリー用・index.html と共通） -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="閉じる">&times;</button>
+    <div class="lightbox__inner ph" data-label=""></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

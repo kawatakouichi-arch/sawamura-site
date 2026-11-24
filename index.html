@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 作りかけの間は検索に載せない（公開するときにこの行を消す） -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>sawamura yasuko hair&amp;make.</title>
+  <meta name="description" content="ブライダルヘアメイク。関西を中心に全国へ出張可能です。持ち込みヘアメイクが可能な会場に出張します。">
+
+  <!-- フォント（英字：Josefin Sans ／ キャッチコピー：Shippori Mincho・候補フォントも読み込み済み） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Shippori+Mincho&family=Zen+Old+Mincho&family=Klee+One&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（ロゴなし／Instagramボタンなし） ===== -->
+  <header class="header">
+    <p class="header__title">
+      <a href="index.html">
+        <span class="header__name">sawamura yasuko</span>
+      </a>
+    </p>
+
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="global-nav">
+      <ul class="nav__list">
+        <li><a href="index.html" class="is-current">Home</a></li>
+        <li><a href="wedding.html">Wedding</a></li>
+        <li><a href="eyelash.html">Eyelash &amp; Eyebrow</a></li>
+        <li><a href="lesson.html">Make Lesson</a></li>
+        <li><a href="shooting.html">Shooting</a></li>
+        <li><a href="price.html">price</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== メイン写真 ===== -->
+    <section class="hero">
+      <img src="img/main-hd.jpg" alt="ブライダルヘアメイクの様子">
+    </section>
+
+    <!-- ===== キャッチコピー ===== -->
+    <section class="message">
+      <p class="message__text">
+        大切な人たちと過ごす<br>
+        特別な一日<br>
+        そんな日のお手伝いを<br>
+        させていただきます
+      </p>
+    </section>
+
+    <!-- ===== 写真ギャラリー（ブログ・お知らせの代わり） ===== -->
+    <section class="gallery">
+      <h2 class="heading"><span>Gallery</span></h2>
+
+      <ul class="gallery__list">
+        <li><button class="ph ph--square" data-label="写真 1"></button></li>
+        <li><button class="ph ph--square" data-label="写真 2"></button></li>
+        <li><button class="ph ph--square" data-label="写真 3"></button></li>
+        <li><button class="ph ph--square" data-label="写真 4"></button></li>
+        <li><button class="ph ph--square" data-label="写真 5"></button></li>
+        <li><button class="ph ph--square" data-label="写真 6"></button></li>
+        <li><button class="ph ph--square" data-label="写真 7"></button></li>
+        <li><button class="ph ph--square" data-label="写真 8"></button></li>
+        <li><button class="ph ph--square" data-label="写真 9"></button></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <a href="#" class="pagetop">Page Top</a>
+
+    <a href="https://www.instagram.com/" class="footer__sns" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.3" cy="6.7" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <p class="footer__copy">Copyright &copy; <span id="year">2026</span> sawamura yasuko</p>
+  </footer>
+
+  <!-- 拡大表示（ギャラリー用） -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="閉じる">&times;</button>
+    <div class="lightbox__inner ph" data-label=""></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
