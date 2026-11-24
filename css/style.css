@@ -253,6 +253,26 @@ body {
   opacity: .75;
 }
 
+/* トップページのギャラリー写真：正方形に切り取る
+   （縦長の写真は髪が上のほうにあるので、少し上寄りで切り取る） */
+.gallery--home .gallery__list button {
+  display: block;
+  width: 100%;
+}
+
+.gallery--home .gallery__list img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: opacity .3s;
+}
+
+.gallery--home .gallery__list button:hover img {
+  opacity: .75;
+}
+
 /* 表示時のふわっと */
 .fade {
   opacity: 0;

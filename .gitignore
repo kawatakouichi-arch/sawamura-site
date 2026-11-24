@@ -8,3 +8,5 @@ CLAUDE.md
 # Windows が勝手に作るファイル
 Thumbs.db
 desktop.ini
+# 写真選び用の確認ページ（アップロードしない）
+photo-select.html
