@@ -987,6 +987,11 @@ body {
     text-align: left;
   }
 
+  /* PCだけで改行する <br>（スマホでは文章をそのまま流して、1〜2文字だけ次の行に落ちないようにする） */
+  .pc-br {
+    display: none;
+  }
+
   .recommend-list__item {
     padding: 18px 0;
     font-size: 14px;
