@@ -27,6 +27,76 @@ if (heroImages.length > 1 && !reduceMotion) {
   }, 3000); // 3000ミリ秒 = 3秒
 }
 
+// ===== トップのギャラリー：1枚ずつふわっと入れかわるスライドショー =====
+// 約2.5秒ごとに、9枚のうちどれか1枚を、まだ出ていない写真に入れかえる。
+// 写真の候補は index.html の <template id="gallery-pool"> の中。
+const galleryPool = document.getElementById('gallery-pool');
+const galleryTiles = document.querySelectorAll('.gallery--home .gallery__list img');
+if (galleryPool && galleryTiles.length && !reduceMotion) {
+  // 候補の写真を { src, alt } の一覧にする
+  const pool = [...galleryPool.content.querySelectorAll('img')].map((img) => ({
+    src: img.getAttribute('src'),
+    alt: img.alt,
+  }));
+
+  // 今ギャラリーに出ている写真は、順番待ちの列に入れない（同じ写真が2か所に出ないように）
+  const shownSrcs = [...galleryTiles].map((img) => img.getAttribute('src'));
+  const queue = pool.filter((photo) => !shownSrcs.includes(photo.src));
+
+  // 順番待ちの列をシャッフル（毎回ちがう順番で出てくるように）
+  for (let i = queue.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [queue[i], queue[j]] = [queue[j], queue[i]];
+  }
+
+  // ギャラリーが画面に見えている間だけ入れかえる（見えていないときは読み込みもしない）
+  let galleryVisible = false;
+  new IntersectionObserver((entries) => {
+    galleryVisible = entries[0].isIntersecting;
+  }).observe(document.querySelector('.gallery--home'));
+
+  let recentTiles = []; // 最近入れかえた場所（続けて同じ場所が変わらないように）
+  let busy = false;     // 入れかえ中は次を始めない
+
+  const swapOne = () => {
+    if (!galleryVisible || busy || document.hidden || queue.length === 0) return;
+
+    // 最近入れかえた2か所以外から、ランダムに1か所選ぶ
+    const candidates = [...galleryTiles.keys()].filter((i) => !recentTiles.includes(i));
+    const index = candidates[Math.floor(Math.random() * candidates.length)];
+    recentTiles = [index, ...recentTiles].slice(0, 2);
+
+    const tile = galleryTiles[index];
+    const next = queue.shift();
+    busy = true;
+
+    // 次の写真を読み込んでから、上に重ねてふわっと表示
+    const overlay = new Image();
+    overlay.className = 'gallery__next';
+    overlay.alt = '';
+    overlay.onload = () => {
+      tile.parentNode.appendChild(overlay);
+      overlay.getBoundingClientRect(); // 表示の準備をさせてから is-show を付ける（これがないとふわっとしない）
+      overlay.classList.add('is-show');
+
+      setTimeout(() => {
+        // ふわっと表示し終わったら、下の写真を新しい写真に入れかえて、重ねた写真を消す
+        queue.push({ src: tile.getAttribute('src'), alt: tile.alt }); // 外れた写真は列の最後へ
+        tile.src = next.src;
+        tile.alt = next.alt;
+        tile.decode().catch(() => {}).then(() => {
+          overlay.remove();
+          busy = false;
+        });
+      }, 1300);
+    };
+    overlay.onerror = () => { busy = false; }; // 読み込めなかったときは飛ばす
+    overlay.src = next.src;
+  };
+
+  setInterval(swapOne, 2500); // 2500ミリ秒 = 2.5秒
+}
+
 // ===== スマホメニューの開閉 =====
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');

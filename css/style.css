@@ -299,6 +299,25 @@ body {
   opacity: .75;
 }
 
+/* ギャラリーのスライドショー：次の写真を上に重ねて、ふわっと表示してから入れかえる（js/main.js） */
+.gallery--home .gallery__list button {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery--home .gallery__list button img.gallery__next {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  /* ふわっと入れかわる時間 */
+}
+
+.gallery--home .gallery__list button img.gallery__next.is-show {
+  opacity: 1;
+}
+
 /* 表示時のふわっと */
 .fade {
   opacity: 0;
@@ -1357,6 +1376,16 @@ body {
 
 .form__label {
   font-size: 14px;
+}
+
+/* 項目名・チェックボックスの文字・注意書きは、サイト全体と同じしっぽり明朝
+   （入力欄の中の文字と例文は、入力しやすいようにゴシックのまま） */
+.form__label,
+.form__checks,
+.form__hint,
+.form__group-note {
+  font-family: "Shippori Mincho", serif;
+  letter-spacing: .04em;
 }
 
 /* 「必須」の小さなグレーのラベル */
